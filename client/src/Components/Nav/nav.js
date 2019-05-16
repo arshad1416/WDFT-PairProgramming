@@ -8,10 +8,10 @@ class Nav extends React.Component {
 render() {
     return (
         <div className="nav">
-        <ul className='nav__links'>
-            <li>About Us</li>
-            <li>Resources</li>
-            <li>Contact Us</li>
+        <ul className="nav__links">
+            <li className="nav__links--list">About Us</li>
+            <li className="nav__links--list">Resources</li>
+            <li className="nav__links--list">Contact Us</li>
         </ul>
         </div>
     )
