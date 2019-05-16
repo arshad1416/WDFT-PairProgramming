@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Hero from '../Hero/Hero';
+import Hero from '../Hero/hero';
 import './main.scss';
 // import Axios from 'axios';
 
