@@ -3,10 +3,14 @@ import './herotable.scss';
 
 class Herotable extends Component {
 
-
     render () {
-        const {place, time, mag} = this.props.quakedata.properties;
-        const {longitude, latitude, depth} = this.props.quakedata.geometry;
+        if (!this.props.quakeData[0].properties){
+            // console.log(this.props.quakeData[0].properties)
+            
+            return <h1 className="test">Loading...</h1>
+        }
+        const {place, time, mag, url} = this.props.quakeData[0].properties;
+        const {coordinates} = this.props.quakeData[0].geometry;
         let date = new Date(time)
         let dd = String(date.getDate()).padStart(2, '0');
         let mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -28,11 +32,14 @@ class Herotable extends Component {
                     <h3 className="earthquake__header--header3">
                         Magnitude
                     </h3>
-                    <h3 className="earthquake__header--header4"
-                        >Depth
+                    <h3 className="earthquake__header--header4">
+                        Depth
+                    </h3>
+                    <h3 className="earthquake__header__header5">
+                        Interative Map
                     </h3>
                 </section>
-                {this.props.quakedata.map((mag, date, place, coordinates, id) => (
+                {this.props.quakeData.map(() => (
                     <section className="eartquake__table">
                         <section className="earthquake__tableRow1">
                             <h4 className="earthquake__place">
@@ -41,9 +48,15 @@ class Herotable extends Component {
                             <h4 className="earthquake__date">
                                 {date}
                             </h4>
-                            <h4 className="earthquake__date">
+                            <h4 className="earthquake__mag">
                                 {mag}
                             </h4>
+                            <h4 className="earthquake__depth">
+                                {coordinates[2]}
+                            </h4>
+                            {/* <h4 className="earthquake__link">
+                                {url}
+                            </h4> */}
                         </section>
                         <section className="earthquake__tableRow2">
                             
