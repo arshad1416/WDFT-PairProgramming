@@ -10,13 +10,25 @@
         margin-top: 16px;
     }   
 
-    &__table {
+    &__header {
         display: flex;
         justify-content: space-evenly;
         margin-top: 16px;
         background-color: silver;
         // border: 1px solid grey;
     } 
+
+    &__tableRow1 {
+        margin: 0;
+        padding: 1rem 0;
+        background-color: whitesmoke;
+    }    
+
+    &__tableRow2 {
+        margin: 0;
+        padding: 1rem 0;
+        background-color: silver;
+    }
 }
 
 

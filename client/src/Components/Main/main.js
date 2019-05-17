@@ -23,6 +23,7 @@ class Main extends Component {
         return (
             <>
                 <Hero />
+                
                 <HeroTable quakeData = {this.state.quakeData} />
             </>
         );
