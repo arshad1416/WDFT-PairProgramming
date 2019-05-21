@@ -35,9 +35,9 @@ class Herotable extends Component {
                     <h3 className="earthquake__header--header4">
                         Depth
                     </h3>
-                    <h3 className="earthquake__header__header5">
+                    {/* <h3 className="earthquake__header__header5">
                         Interative Map
-                    </h3>
+                    </h3> */}
                 </section>
                 {this.props.quakeData.map(() => (
                     <section className="eartquake__table">
