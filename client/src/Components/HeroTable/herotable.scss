@@ -17,14 +17,15 @@
         background-color: silver;
         box-shadow: 0 4px 6px 0 black;
         border-radius: 4px;
+        padding: 0 3rem;
     } 
 
     &__tableRow1 {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         margin: 0;
-        padding: 1rem 0;
+        padding: 1rem 3rem;
         background-color: whitesmoke;
     }    
 
@@ -36,9 +37,13 @@
 
     // &__table {
     //     display: flex;
-    //     justify-content: center;
+    //     justify-content: flex-start;
     //     flex-direction: row;
     // }
+
+    &__column {
+        width: 250px;
+    }
 }
 
 
