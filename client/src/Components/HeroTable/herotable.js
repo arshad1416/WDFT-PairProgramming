@@ -2,21 +2,25 @@ import React, { Component } from 'react';
 import './herotable.scss';
 
 class Herotable extends Component {
-
-    render () {
-        if (!this.props.quakeData[0].properties){
-            // console.log(this.props.quakeData[0].properties)
-            
-            return <h1 className="test">Loading...</h1>
-        }
-        const {place, time, mag, url} = this.props.quakeData[0].properties;
-        const {coordinates} = this.props.quakeData[0].geometry;
+    timeFunction = (time) => {
         let date = new Date(time)
         let dd = String(date.getDate()).padStart(2, '0');
         let mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
         let yyyy = date.getFullYear();
         date = mm + '/' + dd + '/' + yyyy;
-
+        return date;
+    }
+    render () {
+        if (!this.props.quakeData){
+            // console.log(this.props.quakeData[0].properties)
+            
+            return <h1 className="test">Loading...</h1>
+        } else {
+        // const {place, time, mag} = this.props.quakeData.properties;
+        // const {coordinates} = this.props.quakeData.geometry;
+        // let date = new Date(this.props.quakeData.properties.time)
+        // console.log(this.props.quakeData)
+        
         return (
             <main className="earthquake">
                 <h1 className="earthquake__title">
@@ -39,20 +43,20 @@ class Herotable extends Component {
                         Interative Map
                     </h3> */}
                 </section>
-                {this.props.quakeData.map(() => (
+                {this.props.quakeData.map((datum) => (
                     <section className="eartquake__table">
                         <section className="earthquake__tableRow1">
                             <h4 className="earthquake__place">
-                                {place}
+                                {datum.properties.place}
                             </h4>
                             <h4 className="earthquake__date">
-                                {date}
+                                {this.timeFunction(datum.properties.time)}
                             </h4>
                             <h4 className="earthquake__mag">
-                                {mag}
+                                {datum.properties.mag}
                             </h4>
                             <h4 className="earthquake__depth">
-                                {coordinates[2]}
+                                {datum.geometry.coordinates[2]} {datum.properties.magType}
                             </h4>
                             {/* <h4 className="earthquake__link">
                                 {url}
@@ -64,7 +68,7 @@ class Herotable extends Component {
                     </section>
                 ))}
             </main>
-        );
+        );}
     }
 }
 

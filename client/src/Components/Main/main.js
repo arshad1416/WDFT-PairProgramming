@@ -9,7 +9,10 @@ class Main extends Component {
 
     state = {
         quakeData: [{
-        }]}
+            properties: {},
+            geometry: {coordinates:[]}
+        }]
+    }
 
     componentDidMount() {
         Axios
@@ -21,7 +24,7 @@ class Main extends Component {
         }
 
     render() {
-        
+        console.log(this.state.quakeData)
         return (
             <>
                 <Hero />
