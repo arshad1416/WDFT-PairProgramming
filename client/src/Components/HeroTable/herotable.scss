@@ -15,12 +15,14 @@
         justify-content: space-evenly;
         margin-top: 16px;
         background-color: silver;
-        // border: 1px solid grey;
         box-shadow: 0 4px 6px 0 black;
         border-radius: 4px;
     } 
 
     &__tableRow1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
         margin: 0;
         padding: 1rem 0;
         background-color: whitesmoke;
@@ -28,9 +30,15 @@
 
     &__tableRow2 {
         margin: 0;
-        padding: 1rem 0;
+        padding: 0.1rem 0;
         background-color: silver;
     }
+
+    // &__table {
+    //     display: flex;
+    //     justify-content: center;
+    //     flex-direction: row;
+    // }
 }
 
 
